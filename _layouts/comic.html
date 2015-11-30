@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<div class="comic">
+
+  <header class="comic-header">
+    <h1 class="comic-title">{{ page.title }}</h1>
+    <p class="comic-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+  </header>
+
+  <div class="fb-like" data-href="{{ page.url  | prepend: site.baseurl }}" data-layout="box_count" data-action="like" data-show-faces="false" data-share="false"></div>
+
+  <a href="https://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="horsedragonfish">Tweet</a>
+
+  <div class="g-plusone" data-size="tall" data-href="{{ page.url  | prepend: site.baseurl }}"></div>
+
+  <img src="{{ site.baseurl }}/images/comics/{{ page.title | slugify }}.png">
+
+  <article class="comic-content">
+    {{ content }}
+  </article>
+
+</div>
